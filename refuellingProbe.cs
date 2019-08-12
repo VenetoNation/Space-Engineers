@@ -1,3 +1,7 @@
+/*
+YOU RUN THE PB USING THE PARAMETER "EXTEND" OR "RETRACT" DEPENDING ON WHAT YOU WANT HIM TO DO.
+*/
+
 using Sandbox.Game.EntityComponents;
 using Sandbox.ModAPI.Ingame;
 using Sandbox.ModAPI.Interfaces;
@@ -21,6 +25,7 @@ namespace IngameScript
 {
     partial class Program : MyGridProgram
     {
+    //INITIALIZES BLOCKS
         IMyPistonBase piston1, piston2, piston3, piston4;
         IMyMotorStator rotor1, rotor2;
         IMyShipConnector connector;
@@ -28,6 +33,7 @@ namespace IngameScript
 
         public Program()
         {
+        //GETS BLOCKS VIA THEIR NAMES
             piston1 = GridTerminalSystem.GetBlockWithName("piston 1 (main dock)") as IMyPistonBase;
             piston2 = GridTerminalSystem.GetBlockWithName("piston 2 (main dock)") as IMyPistonBase;
             piston3 = GridTerminalSystem.GetBlockWithName("piston 3 (main dock)") as IMyPistonBase;
@@ -43,9 +49,12 @@ namespace IngameScript
 
         public void Main(string argument)
         {
+        //THIS STEP IS IMPORTANT BECAUSE THE TIMER RUNS THE PB WITH DEFAULT PARAMETER, WICH IS EMPTY.
+        //IF YOU WERE TO REMOVE THIS, THE FOLLOWING SWITCH WOULDN'T WORK
             if (!String.IsNullOrEmpty(argument))
                 timer.CustomData = argument + "1";
-
+        
+        //DIFFERENT PHASES ARE REGULATED VIA TIMER'S CUSTOM DATA
             switch (timer.CustomData)
             {
                 case "extend1":
@@ -105,6 +114,7 @@ namespace IngameScript
             }
         }
 
+        //ALLOWS YOU TO DECIDE HOW MUCH TIME YOU WANT TO WAIT BETWEEN EACH PHASE
         private void Sleep(float time)
         {
             timer.TriggerDelay = time;
