@@ -74,11 +74,11 @@ namespace IngameScript
                     break;
 
                 case "ON":
-                    setSortersStatus(true);
+                    enableSorters(true);
                     break;
 
                 case "OFF":
-                    setSortersStatus(false);
+                    enableSorters(false);
                     break;
 
                 default:
@@ -88,7 +88,7 @@ namespace IngameScript
             displayText();
         }
 
-        private void setSortersStatus(bool status)
+        private void enableSorters(bool status)
         {
             foreach (IMyConveyorSorter sorter in sorters)
                 sorter.Enabled = status;
@@ -99,7 +99,7 @@ namespace IngameScript
 
         public void displayText()
         {
-            bool sorterStatus = sorters[0].Enabled;
+            bool sortersEnabled = sorters[0].Enabled;
             string filterType = sorters[0].CustomData;
             string stoneIce, stone, ice, on, off;
             string output;
@@ -129,7 +129,7 @@ namespace IngameScript
                     break;
             }
 
-            if (sorterStatus)
+            if (sortersEnabled)
                 on += "     X";
             else
                 off += "     X";
