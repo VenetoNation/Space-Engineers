@@ -56,6 +56,7 @@ namespace IngameScript
                 timer.CustomData = argument + "1";
         
         //DIFFERENT PHASES ARE REGULATED VIA TIMER'S CUSTOM DATA
+        //notice that extend and retract processes are not the same in reverse because I found out that it would bump into obstacles
             switch (timer.CustomData)
             {
                 case "extend1":
