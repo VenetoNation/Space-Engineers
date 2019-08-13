@@ -53,8 +53,8 @@ namespace IngameScript
         //THIS STEP IS IMPORTANT BECAUSE THE TIMER RUNS THE PB WITH DEFAULT PARAMETER, WICH IS EMPTY.
         //IF YOU WERE TO REMOVE THIS, THE FOLLOWING SWITCH WOULDN'T WORK
             if (!String.IsNullOrEmpty(argument))
-                timer.CustomData = argument + "1";
-        
+               timer.CustomData = argument.ToLower() + "1";
+                
         //DIFFERENT PHASES ARE REGULATED VIA TIMER'S CUSTOM DATA
         //notice that extend and retract processes are not the same in reverse because I found out that it would bump into obstacles
             switch (timer.CustomData)
