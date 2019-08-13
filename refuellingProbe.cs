@@ -71,7 +71,7 @@ namespace IngameScript
                     break;
 
                 case "extend2":
-                    if (rotor1.TargetVelocityRPM > 0)
+                    if (rotor1.TargetVelocityRPM > 0) //just to be sure it doesn't reverse in the wrong way
                         rotor1.TargetVelocityRPM *= -1;
                     Sleep(2f);
                     timer.CustomData = "extend3";
