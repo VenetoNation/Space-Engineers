@@ -1,5 +1,5 @@
 /*
-YOU RUN THE PB USING THE PARAMETER "EXTEND" OR "RETRACT" DEPENDING ON WHAT YOU WANT HIM TO DO.
+YOU RUN THE PB USING THE ARGUMENT "EXTEND" OR "RETRACT" DEPENDING ON WHAT YOU WANT HIM TO DO.
 PROJECT HAS BEEN RUSHED, NEEDS POLISHING BUT WORKS
 */
 
@@ -53,7 +53,7 @@ namespace IngameScript
         //THIS STEP IS IMPORTANT BECAUSE THE TIMER RUNS THE PB WITH DEFAULT PARAMETER, WICH IS EMPTY.
         //IF YOU WERE TO REMOVE THIS, THE FOLLOWING SWITCH WOULDN'T WORK
             if (!String.IsNullOrEmpty(argument))
-               timer.CustomData = argument.ToLower() + "1";
+               timer.CustomData = argument.ToLower() + "1";  //the ToLower method makes argument case not matter
                 
         //DIFFERENT PHASES ARE REGULATED VIA TIMER'S CUSTOM DATA
         //notice that extend and retract processes are not the same in reverse because I found out that it would bump into obstacles
