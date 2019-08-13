@@ -4,6 +4,7 @@ SETUP THE TIMER SO IT'S ONLY ACTION IS TO RUN THE PB WITH DEFAULT ARGUMENT
 (time delay will be set in the code) 
 
 PROJECT HAS BEEN RUSHED, NEEDS POLISHING BUT WORKS
+English is not my native language.. so.. :) 
 */
 
 using Sandbox.Game.EntityComponents;
