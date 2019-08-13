@@ -41,15 +41,15 @@ namespace IngameScript
         {
             if (camera.IsActive)
             {
-                setGyrosStatus(false);
+                enableGyros(false);
                 rotor1.TargetVelocityRPM = (cockpit.RotationIndicator.X * 2);
                 rotor2.TargetVelocityRPM = (cockpit.RotationIndicator.Y * 2);
             }
             else
-                setGyrosStatus(true);
+                enableGyros(true);
         }
 
-        private void setGyrosStatus(bool status)
+        private void enableGyros(bool status)
         {
             foreach (IMyGyro gyro in gyros)
                 gyro.Enabled = status;
