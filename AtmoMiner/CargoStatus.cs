@@ -38,8 +38,7 @@ namespace IngameScript
 
         public void Main(string argument, UpdateType updateSource)
         {
-            double percent = getCargoStatus();
-            displayStatus(percent);
+            displayStatus(getCargoStatus());
         }
 
         private double getCargoStatus()
@@ -59,9 +58,7 @@ namespace IngameScript
         private void displayStatus(double percent)
         {
             string percentString = String.Format("{0:0.00}%", percent);
-            string output = "CARGO STATUS:\n" + percentString;
-
-            panel.WriteText(output);
+            panel.WriteText("CARGO STATUS:\n" + percentString);
         }
     }
 }
