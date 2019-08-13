@@ -61,7 +61,7 @@ namespace IngameScript
                     piston1.Extend();
                     piston2.Extend();
                     Sleep(1f);
-                    timer.CustomData = "extend2";
+                    timer.CustomData = "extend2"; //timer's customData gets updated so next time it runs the PB the next phase gets executed
                     break;
 
                 case "extend2":
