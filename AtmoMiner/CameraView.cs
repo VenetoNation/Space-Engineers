@@ -43,7 +43,7 @@ namespace IngameScript
             {
                 enableGyros(false);
                 rotor1.TargetVelocityRPM = (cockpit.RotationIndicator.X * 2);
-                rotor2.TargetVelocityRPM = (cockpit.RotationIndicator.Y * 2);
+                rotor2.TargetVelocityRPM = -(cockpit.RotationIndicator.Y * 2);
             }
             else
                 enableGyros(true);
